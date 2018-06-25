@@ -1,0 +1,52 @@
+.reset() {
+	body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, table, th, td, embed, object {
+    padding: 0;
+    margin: 0; 
+    }
+}
+
+.fl(@fl:left) {
+	float: @fl;
+}
+
+.fr(@fr:right) {
+	float: @fr;
+}
+
+
+.pos(r) {
+	position: relative;
+}
+
+.pos(a) {
+	position: absolute;
+}
+
+.pos(f) {
+	position: fixed;
+}
+
+//font-family
+.font-wr(@wr:"微软雅黑") {
+	font-family: @wr;
+}
+
+//清除浮动
+.clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+      display: table;
+      content: "";
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+//test用例
+.test(@w:200px,@h:200px,@bgr: red) {
+	width: @w;
+	height: @h;
+	background-color: @bgr;
+}

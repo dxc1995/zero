@@ -13,6 +13,9 @@
 	float: @fr;
 }
 
+.bc() {
+	margin: 0 auto;
+}
 
 .pos(r) {
 	position: relative;
@@ -49,4 +52,87 @@
 	width: @w;
 	height: @h;
 	background-color: @bgr;
+}
+
+//css3
+//*
+//* border-radius
+// */
+.border-radius(@radius: 5px) {
+	-webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+	        border-radius: @radius;
+}
+
+// 单角
+.border-top-left-radius(@radius: 5px) {
+	-webkit-border-top-left-radius: @radius;
+	   -moz-border-radius-topleft: @radius;
+	        border-top-left-radius: @radius;
+}
+
+.border-top-right-radius(@radius: 5px) {
+	-webkit-border-top-right-radius: @radius;
+	   -moz-border-radius-topright: @radius;
+	        border-top-right-radius: @radius;
+}
+
+.border-bottom-right-radius(@radius: 5px) {
+	-webkit-border-bottom-right-radius: @radius;
+	   -moz-border-radius-bottomright: @radius;
+	        border-bottom-right-radius: @radius;
+}
+
+.border-bottom-left-radius(@radius: 5px) {
+	-webkit-border-bottom-left-radius: @radius;
+	   -moz-border-radius-bottomleft: @radius;
+	        border-bottom-left-radius: @radius;
+}
+
+//单边
+.border-top-radius(@radius: 5px) {
+	.border-top-right-radius(@radius);
+	.border-top-left-radius(@radius);
+}
+
+.border-right-radius(@radius: 5px) {
+	.border-top-right-radius(@radius);
+	.border-bottom-right-radius(@radius);
+}
+
+.border-bottom-radius(@radius: 5px) {
+	.border-bottom-right-radius(@radius);
+	.border-bottom-left-radius(@radius);
+}
+
+.border-left-radius(@radius: 5px) {
+	.border-top-left-radius(@radius);
+	.border-bottom-left-radius(@radius);
+}
+
+//*
+// *  box-shadow
+// */
+.box-shadow(@shadow: 0px 0px 5px #ccc) {
+	-webkit-box-shadow: @shadow;
+	   -moz-box-shadow: @shadow;
+	        box-shadow: @shadow;
+}
+
+//*
+// *  box-sizing 盒模型计算方式
+// */
+
+.box-sizing(@boxmodel: content-box) {
+	-webkit-box-sizing: @boxmodel;
+	   -moz-box-sizing: @boxmodel;
+	        box-sizing: @boxmodel;
+}
+
+//*
+// * 透明度
+// */
+.opacity(@opacity: 80) {
+	opacity: @opacity / 100;
+	filter:~"alpha(opacity=@{opacity})";
 }
